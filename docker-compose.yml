@@ -3,9 +3,9 @@ services:
   mysql:
     build: ./mysql
     environment:
-      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: 1234
     volumes:
-      - db:/var/lib/mysql
+      - ./db:/var/lib/mysql
   php:
     build: ./php
     ports:
@@ -14,5 +14,4 @@ services:
       - ./html:/var/www/html
     depends_on:
       - mysql
-volumes:
-  db:
+
